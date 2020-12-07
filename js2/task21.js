@@ -1,20 +1,21 @@
-function replaceAll(seq, find, replace) { //seq array
-    let flag = false;
+// https://www.codewars.com/kata/57ae18c6e298a7a6d5000c7a
+function replaceAll(seq, find, replace) { 
+    let flag = false;   // tikrinu ar gaunu array ar stringa
     if (typeof seq === 'string') {
         flag = true;
     }
     let smth = []
     let isInaString = '';
-    for (let i = 0; i < seq.length; i++) {
-        if (seq[i] === find) {
-            if (!flag) {  // false
-                smth.push(replace)
+    for (let i = 0; i < seq.length; i++) { 
+        if (seq[i] === find) { //ieskau FIND elementa
+            if (!flag) {  // false // jeigu gavau array, tai pushinu i nauja array 
+                smth.push(replace)  
             }
         }
         else {
-            smth.push(seq[i])
+            smth.push(seq[i]) // kai nerandu , tiesiog supushinu esama elementa i nauja masiva
         }
-        if (flag) {
+        if (flag) {  // Tas pats dalykas kaip pries tai, tik su string tipo kintamaisiais
             if (seq[i] === find) {
                 isInaString += replace;
             }
@@ -23,10 +24,10 @@ function replaceAll(seq, find, replace) { //seq array
             }
         }
     }
-    if (typeof seq !== 'string') {
+    if (typeof seq !== 'string') { // Jeigu gavau i funkcija argumenta, ne stringa, tai grazinu uzpildyta array
         return smth
     }
-    else {
+    else { // kitu atveju grazinu stringa nauja
         return isInaString;
     }
 }
