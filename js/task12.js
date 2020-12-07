@@ -1,6 +1,6 @@
 //https://www.codewars.com/kata/5a55f04be6be383a50000187/train/javascript
 function specialNumber(n) {
-    let checknum = n.toString(); // 107 tekstas
+    let checknum = n.toString(); // pervedu i tema // 1466
     const skaiciai = '012345'; //pasirasau kas ieina i special number savoka
     let numberOfSpec = 0; //skaitliukas spec skaiciu
     for (let i = 0; i < checknum.length; i++) { // prasuku cikla, patikrinu kiekviena indexa
@@ -10,6 +10,7 @@ function specialNumber(n) {
             numberOfSpec++; // jeigu yra pridedu 1 i skaitliuka
         }
     }
+    console.log(numberOfSpec)
     if (numberOfSpec === checknum.length) { // klausiu ar mano skaitliuk0 rodmuo sutampa su saraso ilgiu
         return "Special!!"; // jei taip sakau Valio
     } 
@@ -17,3 +18,5 @@ function specialNumber(n) {
         return "NOT!!"; //jei ne tai ne
     }
 }
+
+specialNumber(1466);
